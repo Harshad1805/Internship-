@@ -1,52 +1,27 @@
-# Prerequisites
-*.d
+C# program to implement missing number //
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
-
-# Linker output
-*.ilk
-*.map
-*.exp
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
-
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+using System;
+class GFG{
+   
+// Function to find missing
+// number
+static int getMissingNo(int[] a,
+                        int n)
+{
+  int n_elements_sum = (n * (n + 1) / 2);
+  int sum = 0;
+ 
+  for (int i = 0; i < n - 1; i++)
+    sum = sum + a[i];
+ 
+  return (n_elements_sum - sum);
+}
+ 
+// Driver code
+public static void Main()
+{
+  int[] a = {1, 2, 4, 5, 6};
+  int miss = getMissingNo(a, 5);
+  Console.Write(miss);
+}
+}
